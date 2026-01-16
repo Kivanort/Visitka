@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иван | Фронтенд Инженер</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Главный CLI интерфейс -->
+    <div class="cli-container active" id="cli-container">
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="buttons">
+                    <span class="close"></span>
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                </div>
+                <span class="title">ivan@portfolio:~</span>
+            </div>
+            <div class="terminal-body" id="terminal-output">
+                <div class="output-line">
+                    <span class="prompt">ivan@portfolio:~$</span>
+                    <span class="command">welcome</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">
+██████╗ ██████╗  ██████╗ ███╗   ██╗████████╗
+██╔══██╗██╔══██╗██╔═══██╗████╗  ██║╚══██╔══╝
+██║  ██║██████╔╝██║   ██║██╔██╗ ██║   ██║   
+██║  ██║██╔══██╗██║   ██║██║╚██╗██║   ██║   
+██████╔╝██║  ██║╚██████╔╝██║ ╚████║   ██║   
+╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   
+                    </span>
+                </div>
+                <div class="output-line">
+                    <span class="output">Добро пожаловать в цифровое пространство Ивана.</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">Фронтенд-инженер, создающий живые интерфейсы.</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">Введите <span class="highlight">help</span> для списка команд.</span>
+                </div>
+            </div>
+            <div class="terminal-input">
+                <span class="prompt">ivan@portfolio:~$</span>
+                <input type="text" id="command-input" autofocus>
+                <span class="cursor">|</span>
+            </div>
+        </div>
+        
+        <!-- Секретная дверь (пасхалка) -->
+        <div class="secret-door" id="secret-door" title="Зажми Ctrl+Shift и кликни"></div>
+    </div>
+
+    <!-- Организм/Лаборатория -->
+    <div class="lab-container" id="lab-container">
+        <canvas id="organism-canvas"></canvas>
+        
+        <div class="lab-ui">
+            <div class="lab-header">
+                <h1><i class="fas fa-dna"></i> Цифровой организм Ивана</h1>
+                <button class="back-to-cli" id="back-to-cli">
+                    <i class="fas fa-terminal"></i> Вернуться в терминал
+                </button>
+            </div>
+            
+            <div class="lab-content">
+                <div class="panel about-panel">
+                    <h2><i class="fas fa-user-astronaut"></i> Кто я</h2>
+                    <p>Я создаю пульсирующие интерфейсы и оживляю макеты. Мои инструменты — React, TypeScript и воображение.</p>
+                    <p>Верю, что код — это поэзия, а интерфейс — это история.</p>
+                </div>
+                
+                <div class="panel skills-panel">
+                    <h2><i class="fas fa-code"></i> Технологии</h2>
+                    <div class="skills-grid">
+                        <span class="skill-cell" data-skill="react">React</span>
+                        <span class="skill-cell" data-skill="ts">TypeScript</span>
+                        <span class="skill-cell" data-skill="js">JavaScript</span>
+                        <span class="skill-cell" data-skill="three">Three.js</span>
+                        <span class="skill-cell" data-skill="css">CSS3</span>
+                        <span class="skill-cell" data-skill="node">Node.js</span>
+                        <span class="skill-cell" data-skill="git">Git</span>
+                        <span class="skill-cell" data-skill="webgl">WebGL</span>
+                    </div>
+                </div>
+                
+                <div class="panel projects-panel">
+                    <h2><i class="fas fa-rocket"></i> Проекты</h2>
+                    <div class="project" id="project-1">
+                        <h3>Интерактивная 3D галерея</h3>
+                        <p>WebGL галерея с физикой элементов. Оптимизировал рендеринг → FPS с 40 до 60.</p>
+                        <button class="view-project">Исследовать</button>
+                    </div>
+                    <div class="project" id="project-2">
+                        <h3>Библиотека ivanko-engine</h3>
+                        <p>Микро-библиотека для создания игровых интерфейсов.</p>
+                        <button class="view-project">Исследовать</button>
+                    </div>
+                </div>
+                
+                <div class="panel contact-panel">
+                    <h2><i class="fas fa-satellite"></i> Контакты</h2>
+                    <div class="contacts">
+                        <a href="#" class="contact-link" id="email-link" title="Нажмите для копирования">
+                            <i class="fas fa-envelope"></i> ivan@example.com
+                        </a>
+                        <a href="https://github.com" target="_blank" class="contact-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://t.me" target="_blank" class="contact-link">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                    </div>
+                    <div class="hint">
+                        <i class="fas fa-lightbulb"></i> Подсказка: Нажмите F12 для режима отладки
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалка для проекта -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Режим отладки (пасхалка) -->
+    <div class="debug-overlay" id="debug-overlay">
+        <div class="debug-info">
+            <h3><i class="fas fa-bug"></i> Режим отладки Ивана</h3>
+            <p>Здесь я выбрал CSS Grid для панелей, потому что нужна была гибкая адаптивная сетка.</p>
+            <p>Canvas отрисовывается через requestAnimationFrame для плавности 60 FPS.</p>
+            <p>CLI написан на ванильном JS для минимализма и скорости.</p>
+            <button id="close-debug">Закрыть отладку</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
